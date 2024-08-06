@@ -91,7 +91,7 @@ const Form = () => {
         setLoading(true);
         setArcadePoints(null);
         setResult(null);
-        setStatus("Waiting for the server...");
+        setStatus("Server Loading..");
         setError(null);
 
         try {
@@ -99,7 +99,7 @@ const Form = () => {
                 setError("Wrong URL");
                 setTimeout(() => {
                     setError(null);
-                    setStatus("Waiting for a valid Input...");
+                    setStatus("Waiting for a valid Input!!!");
                 }, 2000);
                 return;
             }
@@ -175,8 +175,8 @@ const Form = () => {
 
                 <div className='w-full md:w-[50%]'>
                     <div className='p-2 font-bold text-center underline'>Please Note</div>
-                    <div className='p-2 text-center'>Arcade Points shown here don&apos;t include any <strong>Bonus Points</strong> of the <strong>Facilitator Program</strong>.</div>
-                    <div className='p-2 text-green-800 dark:text-green-300 text-center'>Last Updated: <strong>6 August, 2024</strong></div>
+                    <div className='p-2 text-center'>Arcade Points shown here don&apos;t include any <strong>Bonus Points</strong> of the <strong>Google Cloud Facilitator Program 2024</strong>.</div>
+                    <div className='p-2 text-green-800 dark:text-green-300 text-center'>Last Updated: <strong>6th August, 2024</strong></div>
                 </div>
             </div>
             {showProgressBar && <section className='container'><LinearBuffer /></section>}
@@ -190,7 +190,7 @@ const Form = () => {
                     <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="levelBadges">Level Badges</option>
                     <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="triviaBadges">Trivia Badges</option>
                     <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="specialBadges">Special Badges</option>
-                    <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="monsoonBadges">Monsoon Badges</option>
+                    <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="monsoonBadges">Monsoon Challenge Badges</option>
                     <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="digiLeaderBadges">Digital Leader Badges</option>
                     <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="skillBadges">Skill Badges</option>
                 </select>
