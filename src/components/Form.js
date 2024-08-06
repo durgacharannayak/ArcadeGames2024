@@ -217,14 +217,6 @@ const Form = () => {
                         </tr>
                     </tbody>
                 </table>
-                <div className='flex text-left gap-2 mt-2 p-1 text-sm'>
-                    <h1>#</h1>
-                    <h1>Skill Badges earned during <strong>Skill Badge Monsoon Challenge 2024</strong> are only displayed under <strong>Monsoon Badges Category.</strong></h1>
-                </div>
-                <div className='flex text-left gap-2 mb-8 p-1 text-sm'>
-                    <h1>#</h1>
-                    <h1>If you believe there is an error in the points calculated, please fill out <Link href="/help"><strong className='underline'>User Query Form</strong></Link>.</h1>
-                </div>
                 {responseTime && <h1 className='text-right text-sm text-gray-500 dark:text-gray-300 mb-4 mx-2'>{`~ Response Time: ${responseTime} seconds`}</h1>}
             </section>}
         </>
