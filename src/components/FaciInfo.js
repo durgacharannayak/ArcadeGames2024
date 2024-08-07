@@ -23,28 +23,28 @@ const FaciInfo = ({ faciData }) => {
             "trivia": faciTrivia > 6 ? 6 : faciTrivia,
             "skill": faciSkill > 28 ? 28 : faciSkill,
             "color": "lightgreen",
-            "milestoneName": "Milestone 3"
+            "milestoneName": "Milestone #3"
         })
         setMilestone2({
             "game": faciGame > 3 ? 3 : faciGame,
             "trivia": faciTrivia > 4 ? 4 : faciTrivia,
             "skill": faciSkill > 18 ? 18 : faciSkill,
             "color": "yellow",
-            "milestoneName": "Milestone 2"
+            "milestoneName": "Milestone #2"
         })
         setMilestone1({
             "game": faciGame > 2 ? 2 : faciGame,
             "trivia": faciTrivia > 2 ? 2 : faciTrivia,
             "skill": faciSkill > 8 ? 8 : faciSkill,
             "color": "red",
-            "milestoneName": "Milestone 1"
+            "milestoneName": "Milestone #1"
         })
     }, [faciData])
 
 
     return (
         <section className='p-2 container mb-8'>
-            <h1 className='text-center text-xl text-gray-800 dark:text-gray-200 font-semibold m-2 mb-4'>Milestone Info</h1>
+            <h1 className='text-center text-xl text-gray-800 dark:text-gray-200 font-semibold m-2 mb-4'>See the progress for your milestones below!</h1>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <FaciCard milestone={milestone1} />
                 <FaciCard milestone={milestone2} />
