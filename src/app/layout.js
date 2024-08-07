@@ -4,7 +4,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Arcade Points Calculator",
+  title: "Technocrats Point Calculator",
   description: "A Next.js web app based on web scraping to help you calculate the Arcade Points you have earned.",
 };
 
