@@ -1,9 +1,12 @@
 "use client"
 import { useState } from 'react';
+import {ExternalLink} from "lucide-react"
 import Loader from './Loader';
 import Link from 'next/link';
 import LinearBuffer from './LinearBuffer';
 import FaciInfo from './FaciInfo';
+import Image from 'next/image';
+import "../app/globals.css";
 
 const Form = () => {
     const [formData, setFormData] = useState({ url: '' });
@@ -16,7 +19,7 @@ const Form = () => {
     const [listOfBadges, setListOfBadges] = useState(null);
     const [badgeValText, setBadgeValText] = useState("All Badges");
     const [badgeValPoint, setBadgeValPoint] = useState(0);
-    const [status, setStatus] = useState("Waiting for the Input...");
+    const [status, setStatus] = useState("Waiting for a valid Input!");
     const [responseTime, setResponseTime] = useState(null);
     const [showProgressBar, setShowProgressBar] = useState(false);
 
@@ -145,8 +148,23 @@ const Form = () => {
 
     return (
         <>
-            <div className='md: container w-80 lg:w-[1000px] md:w-[97%] mt-8 mb-8 p-4 bg-blue-200 dark:bg-gray-500 shadow-md rounded flex flex-col  md:flex-row justify-center items-center gap-6'>
-                <form onSubmit={handleSubmit} className="w-full md:w-[50%]">
+            <Image
+                className="absolute w-full top-0 left-0 z-[1]"
+                src="https://res.cloudinary.com/djoebsejh/image/upload/v1721131421/nwtojjwtzniome9r5jt1.svg"
+                alt="Background"
+                width={100}
+                height={30}
+            />
+            {/* <Image
+                className="absolute bottom-0 z-1 w-full z-[0]"
+                src="https://res.cloudinary.com/djoebsejh/image/upload/v1721132768/re68ribffzls2bjx4khn.svg"
+                alt="Background End"
+                width={100}
+                height={50}
+            /> */}
+            <div className=' container w-80 lg:w-[1000px] md:w-[97%] mt-8 mb-8 p-4 bg-blue-200 dark:bg-gray-800 shadow-md rounded flex flex-col  md:flex-row justify-center items-center gap-6 z-[9]'>
+
+                <form onSubmit={handleSubmit} className=" w-full md:w-[60%] p-4 ">
                     <div className="mb-4">
                         <input
                             type="text"
@@ -155,15 +173,15 @@ const Form = () => {
                             placeholder='Paste Public-Profile-URL here'
                             value={formData.url}
                             onChange={handleChange}
-                            className="w-full px-3 py-2 bg-blue-100 dark:bg-[#101823] border border-blue-500 dark:border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300"
+                            className="w-full text-center px-3 py-2 bg-blue-100 dark:bg-[#101823] border border-blue-500 dark:border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300"
                         />
                     </div>
-                    <button type="submit" className="flex justify-center items-center w-full text-gray-100 dark:text-gray-950 font-bold text-xl bg-blue-600 dark:bg-gray-300 py-2 px-4 rounded hover:bg-blue-700 dark:hover:bg-gray-200">
+                    <button type="submit" className="flex justify-center items-center w-full text-gray-100 dark:text-black dark:bg-green-400 font-bold text-xl bg-blue-600  py-2 px-4 rounded hover:bg-blue-700 dark:hover:bg-green-500">
                         {loading ? <Loader /> : "Calculate"}
                     </button>
                     {arcadePoints ? (
                         <div className="mt-4 p-4 bg-blue-100 dark:bg-gray-900 rounded text-center">
-                            <h2 className="text-lg text-center font-bold mb-2 text-green-800 dark:text-green-300">Arcade Points: {arcadePoints}</h2>
+                            <h2 className="text-lg text-center font-bold mb-2 text-green-800 dark:text-green-400">Arcade Points: {arcadePoints}</h2>
                             {milestoneData && <h2 className="text-lg text-center font-bold mb-2 text-green-800 dark:text-green-400">{milestoneData} Milestone</h2>}
                         </div>
                     ) : (
@@ -173,20 +191,20 @@ const Form = () => {
                     )}
                 </form>
 
-                <div className='w-full md:w-[50%]'>
+                <div className='w-full md:w-[50%] dark:text-white z-[9]'>
                     <div className='p-2 font-bold text-center underline'>Note:</div>
                     <div className='p-2 text-center'>Arcade Points shown here don&apos;t include any <strong>Bonus Points</strong> of the <strong>Google Cloud Facilitator Program 2024</strong>.</div>
-                    <div className='p-2 text-center'><strong>For all Announcements: </strong><Link href={"https://chat.whatsapp.com/JBOoJTNLcSVIspf9zZyFlU"} target="_blank">Arcade Facilitator Group</Link></div>
+                    <div className='p-2 text-center'><strong className='flex flex-row text-center items-center justify-center gap-2'>WhatsApp Community <ExternalLink className="h-5 w-5"/> </strong><Link href={"https://chat.whatsapp.com/JBOoJTNLcSVIspf9zZyFlU"} target="_blank"></Link></div>
                     <div className='p-2 text-green-800 dark:text-green-300 text-center'>Last Updated: <strong>7th August, 2024</strong></div>
                 </div>
             </div>
-            {showProgressBar && <section className='container'><LinearBuffer /></section>}
+            {showProgressBar && <section className='container z-[9]'><LinearBuffer /></section>}
 
             {result && <FaciInfo faciData={result.faciCounts} />}
 
-            {result && <section className='container'>
-                <h1 className='p-2 font-bold text-center'>All Badge Details</h1>
-                <select name="badges" id="badges" className='mt-4 mb-4 w-full md:min-w-[700px] bg-blue-200 dark:bg-slate-600 p-4 text-xl font-bold outline-none cursor-pointer' onChange={handleBadgeChange} defaultValue="allBadges">
+            {result && <section className='container z-[9]'>
+                <h1 className='p-2 font-bold text-center text-lg md:text-xl'>All Badge Details</h1>
+                <select name="badges" id="badges" className='mt-4 mb-4 w-full rounded-md md:min-w-[700px] bg-blue-200 dark:bg-gray-800 dark:text-white p-4 text-xl font-bold outline-none cursor-pointer' onChange={handleBadgeChange} defaultValue="allBadges">
                     <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="allBadges">All Badges</option>
                     <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="levelBadges">Level Badges</option>
                     <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="triviaBadges">Trivia Badges</option>
@@ -195,7 +213,7 @@ const Form = () => {
                     <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="digiLeaderBadges">Digital Leader Badges</option>
                     <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="skillBadges">Skill Badges</option>
                 </select>
-                <table className='border-collapse w-full mb-4'>
+                <table className='border-collapse w-full px-2 rounded-md mb-4'>
                     <tbody>
                         <tr className='border border-blue-500 dark:border-gray-200'>
                             <th className='text-center p-2 text-bold text-xl bg-blue-200 dark:bg-slate-600 border-r border-blue-600 dark:border-gray-400'>Title</th>

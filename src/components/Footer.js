@@ -4,7 +4,7 @@ import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-
 
 const Footer = () => {
     return (
-        <footer className="bg-blue-200 dark:bg-gray-700 text-gray-800 dark:text-white">
+        <footer className="bg-blue-200 dark:bg-gray-700 text-gray-800 dark:text-white z-[10]">
             <hr />
             <div className="container mx-auto px-4 flex flex-col lg:flex-row-reverse items-center justify-center lg:justify-between p-4">
                 <div className="my-2 flex justify-center items-center">
