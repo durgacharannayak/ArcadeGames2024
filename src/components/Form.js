@@ -19,12 +19,12 @@ const Form = () => {
     const [listOfBadges, setListOfBadges] = useState(null);
     const [badgeValText, setBadgeValText] = useState("All Badges");
     const [badgeValPoint, setBadgeValPoint] = useState(0);
-    const [status, setStatus] = useState("Waiting for a valid Input!");
+    const [status, setStatus] = useState("Waiting for a valid input!");
     const [responseTime, setResponseTime] = useState(null);
     const [showProgressBar, setShowProgressBar] = useState(false);
 
     const handleChange = (e) => {
-        setStatus("Waiting for a valid Input...");
+        setStatus("Waiting for a valid input...");
         const { name, value } = e.target;
         setFormData({
             ...formData,
@@ -194,7 +194,7 @@ const Form = () => {
                 <div className='w-full md:w-[50%] dark:text-white z-[9]'>
                     <div className='p-2 font-bold text-center underline'>Note:</div>
                     <div className='p-2 text-center'>Arcade Points shown here don&apos;t include any <strong>Bonus Points</strong> of the <strong>Google Cloud Facilitator Program 2024</strong>.</div>
-                    <div className='p-2 text-center'><strong className='flex flex-row text-center items-center justify-center gap-2'>WhatsApp Community <ExternalLink className="h-5 w-5"/> </strong><Link href={"https://chat.whatsapp.com/JBOoJTNLcSVIspf9zZyFlU"} target="_blank"></Link></div>
+                    <div className='p-2 text-center'><Link href={"https://chat.whatsapp.com/JBOoJTNLcSVIspf9zZyFlU"} target="_blank"><strong className='flex flex-row text-center items-center justify-center gap-2'>WhatsApp Community <ExternalLink className="h-5 w-5"/> </strong></Link></div>
                     <div className='p-2 text-green-800 dark:text-green-300 text-center'>Last Updated: <strong>7th August, 2024</strong></div>
                 </div>
             </div>

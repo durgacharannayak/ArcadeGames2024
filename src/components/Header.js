@@ -22,12 +22,11 @@ const Header = () => {
                         <Image src='/logo1.jpeg' alt='GCP' width={60} height={60} className='rounded-xl '/>
                     </Link>
                     <div className="hidden md:flex items-center gap-2 md:gap-5">
-                        <Link href={"https://go.cloudskillsboost.google/arcade"} target="_blank" className="flex items-center text-lightText dark:text-darkText py-2 hover:border-b-4 border-orange-400">
-                            <ArrowRightCircle className="mr-1" /> Arcade
+                        <Link href={"https://go.cloudskillsboost.google/arcade"} target="_blank" className="flex items-center text-lightText dark:text-darkText py-2 hover:border-b-4 border-orange-400 gap-1">
+                            Arcade<ArrowRightCircle className="mr-1" /> 
                         </Link>
-                        <Link href="/about" target="_blank" className="flex items-center text-lightText dark:text-darkText py-2 hover:border-b-4 border-orange-400">
-                            {/* <ArrowRightCircle className="mr-1" />  */}
-                            About
+                        <Link href="/about" target="_blank" className="flex items-center text-lightText dark:text-darkText py-2 hover:border-b-4 border-orange-400 gap-1">
+                            Milestone<ArrowRightCircle className="mr-1" /> 
                         </Link>
 
                         <Link href={"https://www.linkedin.com/in/durgacharan-nayak"} target="_blank" className="flex items-center text-lightText dark:text-darkText py-2 gap-2" onClick={toggleMenu}>
@@ -56,7 +55,7 @@ const Header = () => {
                         <ArrowRightCircle className="mr-1" /> Arcade
                     </Link>
                     <Link href="/about" target="_blank" className="flex items-center text-lightText dark:text-darkText py-2 hover:border-b-4 border-orange-400">
-                            <ArrowRightCircle className="mr-1" /> About
+                            <ArrowRightCircle className="mr-1" /> Milestone
                         </Link>
                     <Link href={"https://www.linkedin.com/in/durgacharan-nayak"} target="_blank" className="flex items-center text-lightText dark:text-darkText py-2 gap-2" onClick={toggleMenu}>
                         <Image src="/linkedin.png" alt="linkedin" width={30} height={30} /> Connect
