@@ -91,7 +91,7 @@ const Form = () => {
         setLoading(true);
         setArcadePoints(null);
         setResult(null);
-        setStatus("Server Loading..");
+        setStatus("Milestones Loading..");
         setError(null);
 
         try {
@@ -174,9 +174,10 @@ const Form = () => {
                 </form>
 
                 <div className='w-full md:w-[50%]'>
-                    <div className='p-2 font-bold text-center underline'>Please Note</div>
+                    <div className='p-2 font-bold text-center underline'>Note:</div>
                     <div className='p-2 text-center'>Arcade Points shown here don&apos;t include any <strong>Bonus Points</strong> of the <strong>Google Cloud Facilitator Program 2024</strong>.</div>
-                    <div className='p-2 text-green-800 dark:text-green-300 text-center'>Last Updated: <strong>6th August, 2024</strong></div>
+                    <div className='p-2 text-center'><strong>For all Announcements: </strong><Link href={"https://chat.whatsapp.com/JBOoJTNLcSVIspf9zZyFlU"} target="_blank">Arcade Facilitator Group</Link></div>
+                    <div className='p-2 text-green-800 dark:text-green-300 text-center'>Last Updated: <strong>7th August, 2024</strong></div>
                 </div>
             </div>
             {showProgressBar && <section className='container'><LinearBuffer /></section>}
