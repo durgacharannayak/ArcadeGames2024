@@ -11,7 +11,7 @@ const Header = () => {
                 <div className='flex gap-4 text-left text-xl md:text-2xl font-bold'>
                     <Link href="/">Home🏠</Link>
                     <Link href="/about">Links🔗</Link>
-                    <Link href="https://www.youtube.com/@durgacharannayak3058">Subscribe Us😊</Link>
+                    <Link href={"https://www.youtube.com/@durgacharannayak3058"} target="_blank">Subscribe Us😊</Link>
                 </div>
                 <div className="ml-2 flex items-center space-x-4">
                     <Link href='https://www.cloudskillsboost.google/' target='_blank'><Image src='/google-cloud-logo.webp' alt='GCP' width={60} height={60}></Image></Link>
