@@ -8,7 +8,7 @@ export default function About() {
         <>
             <Header />
             <main className="flex min-h-screen flex-col items-center w-full bg-gray-100 dark:bg-gray-900">
-                <h2 className="text-xl md:text-3xl text-black dark:text-orange-400 text-center p-4 font-semibold">Milestones & Prizes</h2>
+                <h2 className="text-xl md:text-3xl text-black dark:text-orange-400 text-center p-4 font-semibold">Milestone & Prizes</h2>
                 <Image 
                     src="/milestone.jpeg" 
                     alt="milestone" 
