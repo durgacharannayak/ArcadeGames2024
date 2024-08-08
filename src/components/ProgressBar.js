@@ -7,7 +7,7 @@ const ProgressBar = ({ percentage, color, milestoneName }) => {
         width: '100%',
         backgroundColor: 'white',
         borderRadius: '50px',
-        margin: '30px 0'
+        margin: '20px 0 30px'
     };
 
     const fillerStyles = {

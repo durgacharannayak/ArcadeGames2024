@@ -44,7 +44,7 @@ const FaciInfo = ({ faciData }) => {
 
     return (
         <section className='p-6 md:p-10 py-2 container mb-8 z-[9]'>
-            <h1 className='text-center text-xl md:text-3xl text-black dark:text-[#fabc57] font-semibold m-2 mb-4 z-[9]'>See the Progress for your Milestones below🏆</h1>
+            <h1 className='text-center text-xl md:text-3xl text-black dark:text-[#fabc57] font-semibold m-2 mb-4 z-[9]'>See the Progress for your Milestones below 🏆</h1>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <FaciCard milestone={milestone1} />
                 <FaciCard milestone={milestone2} />
