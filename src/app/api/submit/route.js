@@ -191,7 +191,7 @@ const arcadePointsCalculator = (data) => {
         const { valid, monsoon, faci, digi } = validateDate(badge.dateEarned);
         // Check for digital leader badges
         if (digi && validateDigitalLeaderBadge(badge.title)) {
-            badge.points = '5';
+            badge.points = '-';
             allBadgesData.push(badge);
             digitalLeaderBadgesData.push(badge);
         }

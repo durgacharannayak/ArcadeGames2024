@@ -68,7 +68,7 @@ const Form = () => {
         } else if (badgeVal === "digiLeaderBadges") {
             setListOfBadges(result.digital);
             setBadgeValText("Digital Leader Badges");
-            // setBadgeValPoint(result.digital.length === 6 ? 5 : 0);
+            setBadgeValPoint(result.digital.length === 6 ? 5 : 0);
         }
     };
 
@@ -204,19 +204,46 @@ const Form = () => {
 
             {result && <section className='container z-[9] p-8 rounded-lg'>
                 <h1 className='p-2 font-bold text-center text-lg md:text-xl '>All Badge Details</h1>
-                <select name="badges" id="badges" className='mt-4 mb-4 w-full rounded-md md:min-w-[700px] bg-blue-200 dark:bg-gray-800 dark:text-white p-4 text-xl font-bold outline-none cursor-pointer' onChange={handleBadgeChange} defaultValue="allBadges">
-                    <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="allBadges">All Badges</option>
-                    <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="levelBadges">Level Badges</option>
-                    <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="triviaBadges">Trivia Badges</option>
-                    <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="specialBadges">Special Badges</option>
-                    <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="monsoonBadges">Monsoon Challenge Badges</option>
-                    <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="digiLeaderBadges">Digital Leader Badges</option>
-                    <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="skillBadges">Skill Badges</option>
+                <select
+                    name="badges"
+                    id="badges"
+                    className="
+        mt-4 
+        mb-4 
+        w-full 
+        rounded-lg 
+        
+        
+        bg-blue-50 
+        dark:bg-gray-800 
+        dark:text-white 
+        p-3 
+        text-lg 
+        font-medium 
+        outline-none 
+        transition 
+        duration-150 
+        ease-in-out 
+        cursor-pointer 
+       
+        md:min-w-[700px]
+    "
+                    onChange={handleBadgeChange}
+                    defaultValue="allBadges"
+                >
+                    <option className="rounded-lg bg-blue-100 dark:bg-gray-700 p-2" value="allBadges">All Badges</option>
+                    <option className="rounded-lg bg-blue-100 dark:bg-gray-700 p-2" value="levelBadges">Level Badges</option>
+                    <option className="rounded-lg bg-blue-100 dark:bg-gray-700 p-2" value="triviaBadges">Trivia Badges</option>
+                    <option className="rounded-lg bg-blue-100 dark:bg-gray-700 p-2" value="specialBadges">Special Badges</option>
+                    <option className="rounded-lg bg-blue-100 dark:bg-gray-700 p-2" value="monsoonBadges">Monsoon Challenge Badges</option>
+                    <option className="rounded-lg bg-blue-100 dark:bg-gray-700 p-2" value="digiLeaderBadges">Digital Leader Badges</option>
+                    <option className="rounded-lg bg-blue-100 dark:bg-gray-700 p-2" value="skillBadges">Skill Badges</option>
                 </select>
+
                 <table className="w-full px-2 rounded-md mb-4 shadow-md dark:shadow-lg">
                     <thead>
-                        <tr className="bg-blue-200 dark:bg-slate-600 text-center text-bold text-xl rounded-t-md">
-                            <th className="p-3 rounded-tl-md border-r border-blue-600 dark:border-gray-400">Title</th>
+                        <tr className="bg-blue-200 dark:bg-slate-900 text-center text-bold text-xl rounded-t-md">
+                            <th className="p-3 rounded-tl-md border-r border-blue-600 dark:border-gray-400">Badges</th>
                             <th className="hidden lg:table-cell p-3 border-r border-blue-600 dark:border-gray-400">Date Earned</th>
                             <th className="p-3 rounded-tr-md">Arcade Point</th>
                         </tr>
@@ -225,21 +252,21 @@ const Form = () => {
                         {listOfBadges.map((badge) => (
                             <tr
                                 key={badge.title}
-                                className="border-b border-blue-600 dark:border-gray-400 even:bg-blue-200 dark:even:bg-gray-700 odd:bg-blue-100 dark:odd:bg-gray-800"
+                                className="border-b border-blue-600 dark:border-gray-400 even:bg-blue-200 dark:even:bg-gray-900 odd:bg-blue-100 dark:odd:bg-gray-800"
                             >
                                 <td className="p-3 border-r border-blue-600 dark:border-gray-400">
                                     <Link href={badge.badgeURL} target="_blank">{badge.title}</Link>
                                 </td>
-                                <td className="hidden lg:table-cell text-center p-3 border-r border-blue-600 dark:border-gray-400">
+                                <td className="hidden lg:table-cell text-center p-3 border-r border-blue-600 dark:border-gray-600">
                                     {badge.dateEarned}
                                 </td>
                                 <td className="text-center p-3">{badge.points}</td>
                             </tr>
                         ))}
-                        <tr className="bg-blue-200 dark:bg-slate-600 text-center text-bold text-xl rounded-b-md">
-                            <td className="p-3 rounded-bl-md border-r border-blue-600 dark:border-gray-400">{`Total Points Earned from ${badgeValText}`}</td>
+                        <tr className="bg-blue-200 dark:bg-slate-900 text-center text-bold text-xl rounded-b-md">
+                            <td className="p-3 rounded-bl-md border-r border-blue-600 dark:border-gray-400 text-lg font-semibold">{`Total Arcade Points `}</td>
                             <td className="hidden lg:table-cell p-3 border-r border-blue-600 dark:border-gray-400">-</td>
-                            <td className="p-3 rounded-br-md">{badgeValPoint}</td>
+                            <td className="p-3 rounded-br-md text-lg font-semibold">{badgeValPoint}</td>
                         </tr>
                     </tbody>
                 </table>
