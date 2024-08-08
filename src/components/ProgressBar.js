@@ -30,9 +30,9 @@ const ProgressBar = ({ percentage, color, milestoneName }) => {
             <div style={fillerStyles}>
                 <span style={labelStyles}></span>
             </div>
-            <div className='flex justify-between px-2 py-3'>
-                <span className='text-sm md:text-lg font-semibold'>{milestoneName}</span>
-                <span className='text-sm md:text-lg font-semibold'>{`${percentage}% Completed`}</span>
+            <div className='flex justify-between px-0 py-3'>
+                <span className='text-sm md:text-lg font-semibold '>{milestoneName}</span>
+                <span className='text-sm md:text-lg font-semibold '>{`${percentage}% Completed`}</span>
             </div>
         </div>
     );
