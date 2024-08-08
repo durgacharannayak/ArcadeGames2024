@@ -3,7 +3,7 @@ import React from 'react';
 
 const ProgressBar = ({ percentage, color, milestoneName }) => {
     const containerStyles = {
-        height: '20px',
+        height: '15px',
         width: '100%',
         backgroundColor: 'white',
         borderRadius: '50px',

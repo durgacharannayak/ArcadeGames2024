@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react';
-import {ExternalLink} from "lucide-react"
+import { ExternalLink } from "lucide-react"
 import Loader from './Loader';
 import Link from 'next/link';
 import LinearBuffer from './LinearBuffer';
@@ -68,7 +68,7 @@ const Form = () => {
         } else if (badgeVal === "digiLeaderBadges") {
             setListOfBadges(result.digital);
             setBadgeValText("Digital Leader Badges");
-            setBadgeValPoint(result.digital.length === 6 ? 5 : 0);
+            // setBadgeValPoint(result.digital.length === 6 ? 5 : 0);
         }
     };
 
@@ -155,14 +155,14 @@ const Form = () => {
                 width={100}
                 height={30}
             />
-            {/* <Image
+            <Image
                 className="absolute bottom-0 z-1 w-full z-[0]"
                 src="https://res.cloudinary.com/djoebsejh/image/upload/v1721132768/re68ribffzls2bjx4khn.svg"
                 alt="Background End"
                 width={100}
                 height={50}
-            /> */}
-            <div className=' container w-80 lg:w-[1000px] md:w-[97%] mt-8 mb-8 p-4 bg-blue-200 dark:bg-gray-800 shadow-md rounded flex flex-col  md:flex-row justify-center items-center gap-6 z-[9]'>
+            />
+            <div className=' container w-80 lg:w-[1200px] lg:min-h-[300px] md:w-[97%] mt-8 mb-8 p-4 bg-blue-200 dark:bg-gray-800 shadow-md rounded-lg flex flex-col  md:flex-row justify-center items-center gap-6 z-[9]'>
 
                 <form onSubmit={handleSubmit} className=" w-full md:w-[60%] p-4 ">
                     <div className="mb-4">
@@ -192,18 +192,18 @@ const Form = () => {
                 </form>
 
                 <div className='w-full md:w-[50%] dark:text-white z-[9]'>
-                    <div className='p-2 font-bold text-center underline'>Note:</div>
-                    <div className='p-2 text-center'>Arcade Points shown here don&apos;t include any <strong>Bonus Points</strong> of the <strong>Google Cloud Facilitator Program 2024</strong>.</div>
-                    <div className='p-2 text-center'><Link href={"https://chat.whatsapp.com/JBOoJTNLcSVIspf9zZyFlU"} target="_blank"><strong className='flex flex-row text-center items-center justify-center gap-2'>WhatsApp Community <ExternalLink className="h-5 w-5"/> </strong></Link></div>
-                    <div className='p-2 text-green-800 dark:text-green-300 text-center'>Last Updated: <strong>7th August, 2024</strong></div>
+                    <div className='p-2 font-bold text-center text-2xl dark:text-green-300 text-green-800'>Note:</div>
+                    <div className='p-2 text-center text-lg'>Arcade Points shown here don&apos;t include any <strong className='text-orange-800 dark:text-orange-300'>Bonus Points</strong> of the <strong>Google Cloud Facilitator Program 2024</strong>.</div>
+                    <div className='p-2 text-center'><Link href={"https://chat.whatsapp.com/JBOoJTNLcSVIspf9zZyFlU"} target="_blank"><strong className='flex flex-row text-center text-lg items-center justify-center gap-2'>WhatsApp Community <ExternalLink className="h-5 w-5" /> </strong></Link></div>
+                    <div className='p-2 text-green-800 dark:text-green-300 text-center'>Last Updated: <strong>9th August, 2024</strong></div>
                 </div>
             </div>
             {showProgressBar && <section className='container z-[9]'><LinearBuffer /></section>}
 
             {result && <FaciInfo faciData={result.faciCounts} />}
 
-            {result && <section className='container z-[9]'>
-                <h1 className='p-2 font-bold text-center text-lg md:text-xl'>All Badge Details</h1>
+            {result && <section className='container z-[9] p-8 rounded-lg'>
+                <h1 className='p-2 font-bold text-center text-lg md:text-xl '>All Badge Details</h1>
                 <select name="badges" id="badges" className='mt-4 mb-4 w-full rounded-md md:min-w-[700px] bg-blue-200 dark:bg-gray-800 dark:text-white p-4 text-xl font-bold outline-none cursor-pointer' onChange={handleBadgeChange} defaultValue="allBadges">
                     <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="allBadges">All Badges</option>
                     <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="levelBadges">Level Badges</option>
@@ -213,29 +213,37 @@ const Form = () => {
                     <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="digiLeaderBadges">Digital Leader Badges</option>
                     <option className='rounded-lg bg-blue-100 dark:bg-slate-900 p-2' type="button" value="skillBadges">Skill Badges</option>
                 </select>
-                <table className='border-collapse w-full px-2 rounded-md mb-4'>
-                    <tbody>
-                        <tr className='border border-blue-500 dark:border-gray-200'>
-                            <th className='text-center p-2 text-bold text-xl bg-blue-200 dark:bg-slate-600 border-r border-blue-600 dark:border-gray-400'>Title</th>
-                            <th className='hidden lg:block text-center p-2 text-bold text-xl bg-blue-200 dark:bg-slate-600 border-r border-blue-600 dark:border-gray-400'>Date Earned</th>
-                            <th className='text-center p-2 text-bold text-xl bg-blue-200 dark:bg-slate-600'>Arcade Point</th>
+                <table className="w-full px-2 rounded-md mb-4 shadow-md dark:shadow-lg">
+                    <thead>
+                        <tr className="bg-blue-200 dark:bg-slate-600 text-center text-bold text-xl rounded-t-md">
+                            <th className="p-3 rounded-tl-md border-r border-blue-600 dark:border-gray-400">Title</th>
+                            <th className="hidden lg:table-cell p-3 border-r border-blue-600 dark:border-gray-400">Date Earned</th>
+                            <th className="p-3 rounded-tr-md">Arcade Point</th>
                         </tr>
-                        {listOfBadges.map((badge) => {
-                            return <tr key={badge.title} className=' border border-blue-600 dark:border-gray-400 even:bg-blue-200 dark:even:bg-gray-700 odd:bg-blue-100 dark:odd:bg-gray-800'>
-                                <td className='text-left p-2 border-r border-blue-600 dark:border-gray-400'>
-                                    <Link href={badge.badgeURL} target='_blank'>{badge.title}</Link>
+                    </thead>
+                    <tbody>
+                        {listOfBadges.map((badge) => (
+                            <tr
+                                key={badge.title}
+                                className="border-b border-blue-600 dark:border-gray-400 even:bg-blue-200 dark:even:bg-gray-700 odd:bg-blue-100 dark:odd:bg-gray-800"
+                            >
+                                <td className="p-3 border-r border-blue-600 dark:border-gray-400">
+                                    <Link href={badge.badgeURL} target="_blank">{badge.title}</Link>
                                 </td>
-                                <td className='hidden lg:block text-center p-2 border-r border-blue-600 dark:border-gray-400'>{badge.dateEarned}</td>
-                                <td className='text-center text-bold p-2'>{badge.points}</td>
+                                <td className="hidden lg:table-cell text-center p-3 border-r border-blue-600 dark:border-gray-400">
+                                    {badge.dateEarned}
+                                </td>
+                                <td className="text-center p-3">{badge.points}</td>
                             </tr>
-                        })}
-                        <tr className=' border border-gray-200'>
-                            <th className='text-center p-2 text-bold text-xl bg-blue-200 dark:bg-slate-600 border-r lg:border-0 border-blue-600 dark:border-gray-400'>{`Total Points Earned from ${badgeValText}`}</th>
-                            <th className='hidden lg:block text-center p-2 text-bold text-xl bg-blue-200 dark:bg-slate-600 border-r border-blue-600 dark:border-gray-400'>-</th>
-                            <th className='text-center p-2 text-bold text-xl bg-blue-200 dark:bg-slate-600'>{badgeValPoint}</th>
+                        ))}
+                        <tr className="bg-blue-200 dark:bg-slate-600 text-center text-bold text-xl rounded-b-md">
+                            <td className="p-3 rounded-bl-md border-r border-blue-600 dark:border-gray-400">{`Total Points Earned from ${badgeValText}`}</td>
+                            <td className="hidden lg:table-cell p-3 border-r border-blue-600 dark:border-gray-400">-</td>
+                            <td className="p-3 rounded-br-md">{badgeValPoint}</td>
                         </tr>
                     </tbody>
                 </table>
+
                 {responseTime && <h1 className='text-right text-sm text-gray-500 dark:text-gray-300 mb-4 mx-2'>{`~ Response Time: ${responseTime} seconds`}</h1>}
             </section>}
         </>
