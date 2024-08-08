@@ -7,13 +7,13 @@ const FaciCard = ({ milestone }) => {
 
     const getMilestoneTotal = (milestoneName) => {
         switch (milestoneName) {
-            case "Ultimate Milestone":
+            case "Ultimate Milestone🏆":
                 return { totalGame: 6, totalTrivia: 8, totalSkill: 42, totalMilestonePoints: 56 };
-            case "Milestone 3":
+            case "Milestone #3 🎖️":
                 return { totalGame: 5, totalTrivia: 6, totalSkill: 28, totalMilestonePoints: 39 };
-            case "Milestone 2":
+            case "Milestone #2 🎖️":
                 return { totalGame: 3, totalTrivia: 4, totalSkill: 18, totalMilestonePoints: 27 };
-            case "Milestone 1":
+            case "Milestone #1 🎖️":
                 return { totalGame: 2, totalTrivia: 2, totalSkill: 8, totalMilestonePoints: 12 };
             default:
                 return { totalGame: 0, totalTrivia: 0, totalSkill: 0, totalMilestonePoints: 1 };

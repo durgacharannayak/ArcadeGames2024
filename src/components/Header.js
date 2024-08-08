@@ -19,13 +19,13 @@ const Header = () => {
             <div className="container mx-auto flex h-16 items-center justify-between px-2 md:px-4">
                 <div className='flex items-center justify-center gap-2 md:gap-5 text-left text-md md:text-2xl font-semibold'>
                     <Link href='/' className='rounded-full'>
-                        <Image src='/logo1.jpeg' alt='GCP' width={60} height={60} className='rounded-xl '/>
+                        <Image src='/logo1.png' alt='GCP' width={60} height={60} className='rounded-xl '/>
                     </Link>
                     <div className="hidden md:flex items-center gap-2 md:gap-5">
                         <Link href={"https://go.cloudskillsboost.google/arcade"} target="_blank" className="flex items-center text-lightText dark:text-darkText py-2 hover:border-b-4 border-orange-400 gap-2">
                         <Image src="/arcade.png" alt="linkedin" width={25} height={25} className='rounded-md' /> Arcade
                         </Link>
-                        <Link href="/about" target="_blank" className="flex items-center text-lightText dark:text-darkText py-2 hover:border-b-4 border-orange-400 gap-1">
+                        <Link href="/milestone" target="_blank" className="flex items-center text-lightText dark:text-darkText py-2 hover:border-b-4 border-orange-400 gap-1">
                             Milestone<ArrowRightCircle className="mr-1" /> 
                         </Link>
 
@@ -56,7 +56,7 @@ const Header = () => {
                         <Image src="/arcade.png" alt="linkedin" width={25} height={25} className='rounded-md' />
                         Arcade
                     </Link>
-                    <Link href="/about" target="_blank" className="flex items-center text-lightText dark:text-darkText py-2 hover:border-b-4 border-orange-400 gap-2">
+                    <Link href="/milestone" target="_blank" className="flex items-center text-lightText dark:text-darkText py-2 hover:border-b-4 border-orange-400 gap-2">
                             <ArrowRightCircle className="mr-1" /> Milestone
                         </Link>
                     <Link href={"https://www.linkedin.com/in/durgacharan-nayak"} target="_blank" className="flex items-center text-lightText dark:text-darkText py-2 gap-2" onClick={toggleMenu}>

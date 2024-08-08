@@ -203,7 +203,7 @@ const Form = () => {
             {result && <FaciInfo faciData={result.faciCounts} />}
 
             {result && <section className='container z-[9] p-8 rounded-lg'>
-                <h1 className='p-2 font-bold text-center text-lg md:text-xl '>All Badge Details</h1>
+                <h1 className='p-2 font-bold text-center text-lg md:text-3xl '>All Badge Details</h1>
                 <select
                     name="badges"
                     id="badges"
